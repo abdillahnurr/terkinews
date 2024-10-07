@@ -1,0 +1,29 @@
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    padding: 0.75rem;
+}
+
+.news-card {
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ensures smooth transformation and shadow transition */
+}
+
+.news-card:hover {
+    transform: scale(1.03); /* Slightly increase the size of the card */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increases shadow for a 'lifted' effect */
+    /* No need to redefine transition here unless it's different from the initial */
+}
