@@ -4,8 +4,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchNewYorkTimes = createAsyncThunk(
   "news/fetchNewYorkTimes",
   async () => {
-    const apiKey = import.meta.env.VITE_NYT_API_KEY_1; // Load API key from environment variables
-    const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=most+popular&begin_date=20240904&end_date=20241004&api-key=${apiKey}`;
+    const { VITE_NYT_API_KEY_1 } = import.meta.env;
+    const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=most+popular&begin_date=20240904&end_date=20241004&api-key=${VITE_NYT_API_KEY_1}`;
     const res = await fetch(url); // Make the API call
     const data = await res.json(); // Parse the JSON response
     return data.response.docs; // Return the news documents as the payload
@@ -16,8 +16,8 @@ export const fetchNewYorkTimes = createAsyncThunk(
 export const fetchIndonesiaNews = createAsyncThunk(
   "news/fetchIndonesiaNews",
   async () => {
-    const apiKey = import.meta.env.VITE_NYT_API_KEY_2;
-    const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=Indonesia&fq=headline:("Indonesia") AND document_type:("article")&api-key=${apiKey}`;
+    const { VITE_NYT_API_KEY_1 } = import.meta.env;
+    const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=Indonesia&fq=headline:("Indonesia") AND document_type:("article")&api-key=${VITE_NYT_API_KEY_1}`;
     const res = await fetch(url);
     const data = await res.json();
     return data.response.docs;
@@ -28,11 +28,10 @@ export const fetchIndonesiaNews = createAsyncThunk(
 export const fetchProgrammingNews = createAsyncThunk(
   "news/fetchProgrammingNews",
   async () => {
-    const apiKey = import.meta.env.VITE_NYT_API_KEY_2;
-    const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=tech&fq=section_name:("Technology")AND document_type:("article")&api-key=${apiKey}`;
+    const { VITE_NYT_API_KEY_2 } = import.meta.env;
+    const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=tech&fq=section_name:("Technology")AND document_type:("article")&api-key=${VITE_NYT_API_KEY_2}`;
     const res = await fetch(url);
     const data = await res.json();
-    console.log(apiKey)
     return data.response.docs;
   }
 );
@@ -41,11 +40,10 @@ export const fetchProgrammingNews = createAsyncThunk(
 export const fetchSearchNews = createAsyncThunk(
   "news/fetchSearchNews",
   async (keyword) => {
-    const apiKey = import.meta.env.VITE_NYT_API_KEY_1;
-    const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${keyword}&fq=section_name:("World")AND document_type:("article")&api-key=${apiKey}`;
+    const { VITE_NYT_API_KEY_2 } = import.meta.env;
+    const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${keyword}&fq=section_name:("World")AND document_type:("article")&api-key=${ VITE_NYT_API_KEY_2 }`;
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data.response.docs);
     return data.response.docs;
   }
 );
