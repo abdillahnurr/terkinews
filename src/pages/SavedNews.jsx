@@ -34,6 +34,8 @@ function SavedNews() {
                     image={news.image}
                     alt={news.alt}
                     url={news.url}
+                    byline={news.byline}
+                    pub_date={news.pubDate}
                     newsId={news.newsId}
                     onDelete={handleDeleteNews}
                   />
