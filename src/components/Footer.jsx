@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGoogle, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
     // Define styles here
@@ -33,13 +33,13 @@ function Footer() {
                         <Link to="/privacy" style={linkStyle}>Privacy Policy</Link>
                     </Col>
                     <Col md={3} className="text-md-right text-center">
-                        <a href="https://facebook.com" style={iconStyle}>
-                            <FontAwesomeIcon icon={faFacebook} />
+                        <a href="mailto:abdillahnurr12@gmail.com" style={iconStyle}>
+                            <FontAwesomeIcon icon={faGoogle} />
                         </a>
-                        <a href="https://twitter.com" style={iconStyle}>
-                            <FontAwesomeIcon icon={faTwitter} />
+                        <a href="https://github.com/abdillahnurr" style={iconStyle}>
+                            <FontAwesomeIcon icon={faGithub} />
                         </a>
-                        <a href="https://instagram.com" style={iconStyle}>
+                        <a href="https://www.instagram.com/abdillahnurr_/" style={iconStyle}>
                             <FontAwesomeIcon icon={faInstagram} />
                         </a>
                     </Col>
