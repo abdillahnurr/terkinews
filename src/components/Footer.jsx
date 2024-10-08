@@ -33,13 +33,13 @@ function Footer() {
                         <Link to="/privacy" style={linkStyle}>Privacy Policy</Link>
                     </Col>
                     <Col md={3} className="text-md-right text-center">
-                        <a href="mailto:abdillahnurr12@gmail.com" style={iconStyle}>
+                        <a href="mailto:abdillahnurr12@gmail.com" target="_blank" style={iconStyle}>
                             <FontAwesomeIcon icon={faGoogle} />
                         </a>
-                        <a href="https://github.com/abdillahnurr" style={iconStyle}>
+                        <a href="https://github.com/abdillahnurr" target="_blank" style={iconStyle}>
                             <FontAwesomeIcon icon={faGithub} />
                         </a>
-                        <a href="https://www.instagram.com/abdillahnurr_/" style={iconStyle}>
+                        <a href="https://www.instagram.com/abdillahnurr_/" target="_blank" style={iconStyle}>
                             <FontAwesomeIcon icon={faInstagram} />
                         </a>
                     </Col>

@@ -1,3 +1,18 @@
+/* Navbar.css */
+.nav-link {
+    color: black; /* Default color */
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline; /* Optional hover effect */
+}
+
+.nav-link.active-link {
+    text-decoration: underline; /* Underline when the route is active */
+    font-weight: bold; /* You can add this for more emphasis */
+}
+
 .form-inline .form-control {
     width: auto;
     flex-grow: 1;

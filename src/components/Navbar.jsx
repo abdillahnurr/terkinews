@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css'; 
@@ -26,11 +26,11 @@ function NavigationBar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto font-link">
-          <Nav.Link as={Link} to="/indonesia">Indonesia</Nav.Link>
-          <Nav.Link as={Link} to="/saved">Saved</Nav.Link>
-          <Nav.Link as={Link} to="/programming">Programming</Nav.Link>
+          <NavLink className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} as={Link} to="/indonesia">Indonesia</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} as={Link} to="/saved">Saved</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"} as={Link} to="/programming">Programming</NavLink>
         </Nav>
-        <Form inline onSubmit={handleSearchSubmit} className="ml-auto search-bar">
+        <Form onSubmit={handleSearchSubmit} className="ml-auto search-bar">
           
           <FormControl
             type="text"

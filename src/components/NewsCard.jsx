@@ -18,6 +18,7 @@ function NewsCard({
   const [modalMessage, setModalMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
 
+  const limitedParagraph = limitWords(paragraph, 30);
   useEffect(() => {
     // Check the news in the localStorage
     const savedNews = JSON.parse(localStorage.getItem("savedNews")) || [];
@@ -63,7 +64,7 @@ function NewsCard({
         />
         <div className="card-body">
           <h5 className="card-title">{headline.main}</h5>
-          <p className="card-text">{paragraph}</p>
+          <p>{limitedParagraph}</p>
           <p className="card-text"><small className="text-muted">Published on: {formattedPubDate}</small></p>
           <p className="card-text"><small className="text-muted">{byline && byline.original ? byline.original : 'Unknown'}</small></p>
         </div>
@@ -91,6 +92,14 @@ function NewsCard({
       </Modal>
     </div>
   );
+}
+
+function limitWords(text, wordLimit) {
+  const words = text.split(" "); // Pisahkan teks menjadi array kata
+  if (words.length > wordLimit) {
+    return words.slice(0, wordLimit).join(" ") + "..."; // Tambahkan "..." jika teks dipotong
+  }
+  return text; // Jika jumlah kata kurang dari wordLimit, kembalikan teks asli
 }
 
 export default NewsCard;

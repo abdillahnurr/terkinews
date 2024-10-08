@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "./NewsCard";
 import dummyImage from "../assets/nyt.jpg";
 import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap is imported
