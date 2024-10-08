@@ -53,7 +53,7 @@ function FetchedNews({ type }) {
               headline={article.headline.main}
               paragraph={article.lead_paragraph}
               image={
-                article.multimedia && article.multimedia.length > 0 ? `http://www.nytimes.com/${article.multimedia[0].url}`: dummyImage
+                article.multimedia && article.multimedia.length > 0 ? `https://www.nytimes.com/${article.multimedia[0].url}`: dummyImage
               }
               alt={article.snippet}
               url={article.web_url}
